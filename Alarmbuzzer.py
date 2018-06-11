@@ -11,14 +11,14 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(BUZ, GPIO.OUT)
 ck_pwm = GPIO.PWM(BUZ, 10)
 
-alram = ¡°time¡±
-alram = input("Input Time Number (ex. 0800) : ") # ÇÁ·Î±×·¥ ½ÇÇà½Ã ¾Ë¶÷½Ã°£À» ¼³Á¤
+alram = â€œtimeâ€
+alram =  raw_input("Input Time Number (ex. 0800) : ")  # í”„ë¡œê·¸ë¨ ì‹¤í–‰ì‹œ ì•ŒëŒì‹œê°„ì„ ì„¤ì •
 
 while True :
-    currtime = datetime.today().strftime("%H%M") #ÇöÀç½Ã°£À» ½Ã, ºĞ Çü½ÄÀ¸·Î ´ëÀÔ 
-    if(str(alram) == str(currtime)) :               # ¼³Á¤½Ã°£°ú ÇöÀç½Ã°£ÀÌ °°À¸¸é
-        ck_pwm.start(50)                         # ºÎÀú°¡ ¿ï¸°´Ù.
-        time.sleep(10)                            # 10ÃÊ°£ ¿ï¸²
-        ck_pwm.stop()                            # ºÎÀú Á¤Áö
-        sleep(60)                                 # 60ÃÊ µ¿¾È ºñ±³ X
-    sleep(1)                                     # ÀÌÈÄ ½Ã°£ ºñ±³¸¦ 1ÃÊ¸¶´Ù ÇÔ.
+    currtime = datetime.today().strftime(â€œTâ€+"%H%M")  #í˜„ì¬ì‹œê°„ì„ ì‹œ, ë¶„ í˜•ì‹ìœ¼ë¡œ ëŒ€ì… 
+    if(str(alram) == str(currtime)) :               # ì„¤ì •ì‹œê°„ê³¼ í˜„ì¬ì‹œê°„ì´ ê°™ìœ¼ë©´
+        ck_pwm.start(50)                         # ë¶€ì €ê°€ ìš¸ë¦°ë‹¤.
+        time.sleep(10)                            # 10ì´ˆê°„ ìš¸ë¦¼
+        ck_pwm.stop()                            # ë¶€ì € ì •ì§€
+        sleep(60)                                 # 60ì´ˆ ë™ì•ˆ ë¹„êµ X
+    sleep(1)                                     # ì´í›„ ì‹œê°„ ë¹„êµë¥¼ 1ì´ˆë§ˆë‹¤ í•¨.
